@@ -1059,6 +1059,9 @@ header .mega-menu .links li a i {
   width: 75px;
   transition: var(--main-transition);
 }
+.events .content .time:hover {
+  border-color: var(--main-color);
+}
 .events .time h3 {
   font-size: 35px;
   padding: 15px;
