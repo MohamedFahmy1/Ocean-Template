@@ -1359,6 +1359,30 @@ header .mega-menu .links li a i {
   opacity: 0.8;
   transition: var(--main-transition);
 }
+.stats .box::before {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 3px;
+  top: 0;
+  right: 0;
+  transition: 1s;
+  background-color: var(--main-color);
+}
+.stats .box::after {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 3px;
+  bottom: 0;
+  left: 0;
+  transition: 1s;
+  background-color: var(--main-color);
+}
+.stats .box:hover::after,
+.stats .box:hover::before {
+  height: 100%;
+}
 .stats .box p {
   font-weight: bold;
   font-size: 50px;
