@@ -1120,6 +1120,7 @@ header .mega-menu .links li a i {
   font-size: 13px;
   border-top: 1px solid #ddd;
   padding: 8px 10px;
+  transition: var(--main-transition);
 }
 .events .content .tech-event h2 {
   font-size: 30px;
