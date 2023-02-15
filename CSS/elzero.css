@@ -163,6 +163,20 @@ ul {
     display: none;
   }
 }
+::-webkit-scrollbar {
+  width: 18px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f6f6f6;
+  box-shadow: 0 0 10px #ddd inset;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-color-alt);
+}
 /* End Global Rules */
 
 /* Start Header */
@@ -286,6 +300,23 @@ header .mega-menu .links {
 }
 header .mega-menu .links li:not(:last-of-type) {
   border-bottom: 1px solid #ececec;
+}
+header .mega-menu .links li {
+  position: relative;
+}
+header .mega-menu .links li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ececec;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+header .mega-menu .links li:hover:before {
+  width: 100%;
 }
 @media (max-width: 768px) {
   header .mega-menu .links li {
@@ -915,6 +946,7 @@ header .mega-menu .links li a i {
 }
 .our-skills .container {
   display: flex;
+  align-items: center;
 }
 @media (max-width: 991px) {
   .our-skills img {
@@ -1059,13 +1091,15 @@ header .mega-menu .links li a i {
   width: 75px;
   transition: var(--main-transition);
 }
-.events .content .time:hover {
+.events .content .time:hover,
+.events .content .time:hover p {
   border-color: var(--main-color);
 }
 .events .time h3 {
   font-size: 35px;
   padding: 15px;
   color: var(--main-color);
+  transition: var(--main-transition);
   font-weight: bold;
 }
 .events .content .time p {
@@ -1113,21 +1147,12 @@ header .mega-menu .links li a i {
   caret-color: var(--main-color);
   outline: none;
 }
+.events .subscribe input::placeholder {
+  transition: 1s;
+}
 .events .subscribe input:focus::placeholder {
-  color: transparent;
+  opacity: 0;
 }
-.events input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-.events input:focus:-moz-placeholder {
-  color: transparent;
-} /* FF 4-18 */
-.events input:focus::-moz-placeholder {
-  color: transparent;
-} /* FF 19+ */
-.events input:focus:-ms-input-placeholder {
-  color: transparent;
-} /* IE 10+ */
 .events .subscribe button {
   background-color: var(--main-color);
   padding: 20px;
@@ -1135,6 +1160,10 @@ header .mega-menu .links li a i {
   border: none;
   border-radius: 50px;
   font-weight: bold;
+  cursor: pointer;
+}
+.events .subscribe button:hover {
+  background-color: var(--main-color-alt);
 }
 @media (max-width: 768px) {
   .events .subscribe button {
@@ -1189,8 +1218,10 @@ header .mega-menu .links li a i {
 .pricing .container .card:hover::after {
   right: 0;
 }
-.pricing .popular {
-  transform: translateY(-20px);
+@media (min-width: 1200px) {
+  .pricing .popular {
+    transform: translateY(-20px);
+  }
 }
 .pricing .popular h2::before {
   position: absolute;
@@ -1210,7 +1241,7 @@ header .mega-menu .links li a i {
   border-width: 20px;
   border-style: solid;
   border-color: transparent transparent white transparent;
-  top: 107px;
+  top: 97px;
   right: 20px;
 }
 .pricing .card h2 {
@@ -1440,7 +1471,7 @@ header .mega-menu .links li a i {
 @media (max-width: 768px) {
   .discount::before {
     width: 100%;
-    height: 50%;
+    height: calc(50% + 1px);
   }
 }
 .discount .header {
@@ -1517,6 +1548,10 @@ header .mega-menu .links li a i {
   font-size: 20px;
   font-weight: bold;
   border: none;
+  cursor: pointer;
+}
+.discount .form input:last-of-type:hover {
+  background-color: var(--main-color-alt);
 }
 /* End Discount */
 /* Start Footer */
