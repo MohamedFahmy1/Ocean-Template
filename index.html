@@ -19,6 +19,8 @@
     />
   </head>
   <body>
+    <!-- Progress Bar -->
+    <div class="scroller"></div>
     <!-- Start Header -->
     <header>
       <div class="container">
@@ -554,25 +556,25 @@
           <div class="skill">
             <h4>HTML</h4>
             <div class="prog" data-progress="80%">
-              <span data-progress="80%" style="width: 80%"></span>
+              <span class="prog-bar" data-progress="80%"></span>
             </div>
           </div>
           <div class="skill">
             <h4>CSS</h4>
             <div class="prog" data-progress="85%">
-              <span style="width: 85%"></span>
+              <span class="prog-bar" data-progress="85%"></span>
             </div>
           </div>
           <div class="skill">
             <h4>JavaScript</h4>
             <div class="prog" data-progress="70%">
-              <span style="width: 70%"></span>
+              <span class="prog-bar" data-progress="70%"></span>
             </div>
           </div>
           <div class="skill">
             <h4>Python</h4>
             <div class="prog" data-progress="80%">
-              <span style="width: 80%"></span>
+              <span class="prog-bar" data-progress="80%"></span>
             </div>
           </div>
         </div>
@@ -631,19 +633,19 @@
           <div class="tech-event">
             <div class="event-timeleft">
               <div class="time">
-                <h3>41</h3>
+                <h3 class="days">41</h3>
                 <p>Days</p>
               </div>
               <div class="time">
-                <h3>5</h3>
+                <h3 class="hours">5</h3>
                 <p>Hours</p>
               </div>
               <div class="time">
-                <h3>1</h3>
+                <h3 class="minutes">1</h3>
                 <p>Minutes</p>
               </div>
               <div class="time">
-                <h3>17</h3>
+                <h3 class="seconds">17</h3>
                 <p>Seconds</p>
               </div>
             </div>
@@ -776,22 +778,22 @@
       <div class="container">
         <div class="box">
           <i class="far fa-user fa-2x fa-fw"></i>
-          <p>150</p>
+          <p data-goal="150">0</p>
           <span>clients</span>
         </div>
         <div class="box">
           <i class="fas fa-code fa-2x fa-fw"></i>
-          <p>135</p>
+          <p data-goal="135">0</p>
           <span>Projects</span>
         </div>
         <div class="box">
           <i class="fas fa-globe-asia fa-2x fa-fw"></i>
-          <p>50</p>
+          <p data-goal="50">0</p>
           <span>Countries</span>
         </div>
         <div class="box">
           <i class="far fa-money-bill-alt fa-2x fa-fw"></i>
-          <p>500</p>
+          <p data-goal="500">0</p>
           <span>Money</span>
         </div>
       </div>
@@ -886,5 +888,7 @@
       <p class="copyright">Made With &lt;3 By <span> Mohamed Fahmy</span></p>
     </footer>
     <!-- End Footer -->
+    <!-- JavaScript File -->
+    <script src="./JS/main.js"></script>
   </body>
 </html>

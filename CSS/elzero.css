@@ -191,6 +191,13 @@ ul {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--main-color-alt);
 }
+.scroller {
+  width: 100px;
+  background-color: var(--main-color);
+  height: 5px;
+  position: fixed;
+  z-index: 999;
+}
 /* End Global Rules */
 
 /* Start Header */
@@ -985,7 +992,8 @@ header .mega-menu .links li a i {
   display: block;
   height: 30px;
   background-color: var(--main-color);
-  width: 80%;
+  transition: 0.5s ease-in;
+  width: 0;
 }
 .our-skills .skills .prog::before {
   content: attr(data-progress);
@@ -1102,7 +1110,7 @@ header .mega-menu .links li a i {
   border: 1px solid #d4d4d4;
   border-radius: 6px;
   text-align: center;
-  width: 75px;
+  width: 87px;
   transition: var(--main-transition);
 }
 .events .content .time:hover,
