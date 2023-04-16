@@ -61,3 +61,21 @@ let counter = setInterval(() => {
     clearInterval(counter);
   }
 }, 1000);
+
+// Scroll To Top Button
+let scrollTop = document.querySelector(".scroll");
+
+window.onscroll = function () {
+  if (scrollY >= 1000) {
+    scrollTop.classList.add("scroll-active");
+  } else {
+    scrollTop.classList.remove("scroll-active");
+  }
+};
+
+scrollTop.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});

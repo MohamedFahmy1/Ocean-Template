@@ -198,6 +198,23 @@ ul {
   position: fixed;
   z-index: 999;
 }
+button.scroll {
+  padding: 10px;
+  background-color: var(--main-color);
+  position: fixed;
+  bottom: 10px;
+  right: -50px;
+  border-radius: 4px;
+  border: none;
+  z-index: 9999;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.scroll-active {
+  right: 15px !important;
+}
 /* End Global Rules */
 
 /* Start Header */
