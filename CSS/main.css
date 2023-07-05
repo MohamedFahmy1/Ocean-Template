@@ -327,6 +327,9 @@ header .main-nav > li:hover .mega-menu {
   opacity: 1;
   top: calc(100% + 1px);
 }
+header .mega-menu img {
+  height: 350px;
+}
 @media (max-width: 768px) {
   header .mega-menu img {
     display: none;
@@ -403,8 +406,11 @@ header .mega-menu .links li a i {
   }
 }
 .landing .text h2 {
-  font-size: 40px;
-  letter-spacing: -2px;
+  font-size: 55px;
+  background: linear-gradient(to right, #000, var(--main-color) 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 @media (max-width: 767px) {
   .landing .text h2 {
@@ -412,7 +418,7 @@ header .mega-menu .links li a i {
   }
 }
 .landing .text p {
-  color: #666;
+  color: #999;
   font-size: 23px;
   line-height: 2;
   margin: 5px 0 0;
@@ -494,7 +500,7 @@ header .mega-menu .links li a i {
     box-shadow var(--main-transition);
 }
 .articles .card:hover {
-  transform: translateY(-10px);
+  transform: scale(1.1, 1.1);
   box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
 }
 .articles .container .card img {
@@ -588,10 +594,23 @@ header .mega-menu .links li a i {
 
 .gallery .container img {
   max-width: 100%;
-  transition: var(--main-transition);
+  --g: 10% /45% 45% no-repeat linear-gradient(#000 0 0);
+  --m: left var(--i, 0%) top var(--g), bottom var(--i, 0%) left var(--g),
+    top var(--i, 0%) right var(--g), right var(--i, 0%) bottom var(--g);
+  mask: var(--m);
+  -webkit-mask: var(--m);
+  filter: grayscale(0.5);
+  cursor: pointer;
+  -webkit-filter: grayscale(0.5);
+  transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -ms-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
 }
 .gallery .box .image:hover img {
-  transform: rotate(5deg) scale(1.1);
+  filter: grayscale(0);
+  --i: 10%;
 }
 /* End Gallery */
 /* Start Features */
@@ -767,22 +786,22 @@ header .mega-menu .links li a i {
   background-size: cover;
 }
 .testimonials .one::before {
-  background-image: url(../imgs/avatar-01.png);
+  background-image: url(../imgs/avatar-02.jpg);
 }
 .testimonials .two::before {
-  background-image: url(../imgs/avatar-02.png);
+  background-image: url(../imgs/avatar-01.jpg);
 }
 .testimonials .three::before {
-  background-image: url(../imgs/avatar-03.png);
+  background-image: url(../imgs/avatar-03.jpg);
 }
 .testimonials .four::before {
-  background-image: url(../imgs/avatar-04.png);
+  background-image: url(../imgs/avatar-04.jpg);
 }
 .testimonials .five::before {
-  background-image: url(../imgs/avatar-05.png);
+  background-image: url(../imgs/avatar-06.jpg);
 }
 .testimonials .six::before {
-  background-image: url(../imgs/avatar-06.png);
+  background-image: url(../imgs/avatar-05.jpg);
 }
 .testimonials .box h4 {
   font-size: 19px;
@@ -851,10 +870,10 @@ header .mega-menu .links li a i {
   background-image: url(../imgs/team-04.jpg);
 }
 .teamMembers .five::after {
-  background-image: url(../imgs/team-05.png);
+  background-image: url(../imgs/team-05.jpg);
 }
 .teamMembers .six::after {
-  background-image: url(../imgs/team-06.png);
+  background-image: url(../imgs/team-06.jpg);
 }
 .teamMembers .seven::after {
   background-image: url(../imgs/team-07.jpg);
@@ -985,6 +1004,14 @@ header .mega-menu .links li a i {
 .our-skills .container {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+.our-skills img {
+  height: 500px;
+  transition: var(--main-transition);
+}
+.our-skills img:hover {
+  transform: scale(1.1);
 }
 @media (max-width: 991px) {
   .our-skills img {
@@ -1037,7 +1064,7 @@ header .mega-menu .links li a i {
   align-items: center;
 }
 .how-it-works .container > img {
-  max-width: 100%;
+  height: 500px;
   margin-right: 100px;
 }
 @media (max-width: 991px) {
@@ -1390,7 +1417,7 @@ header .mega-menu .links li a i {
   background-color: white;
   padding: 20px;
 }
-.videos .image img {
+.videos .image video {
   max-width: 100%;
 }
 /* End Top Videos */
@@ -1410,7 +1437,7 @@ header .mega-menu .links li a i {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(255 255 255 / 95%);
+  background-color: rgb(255 255 255 / 80%);
   z-index: -1;
 }
 .stats h1 {
@@ -1456,6 +1483,9 @@ header .mega-menu .links li a i {
 .stats .box:hover::after,
 .stats .box:hover::before {
   height: 100%;
+}
+.stats .box img {
+  height: 80px;
 }
 .stats .box p {
   font-weight: bold;
@@ -1681,9 +1711,8 @@ footer .address .info {
     flex-direction: column;
   }
 }
-footer .address .info i {
-  font-size: 25px;
-  color: var(--main-color);
+footer .address .info img {
+  height: 40px;
 }
 footer .address .info p {
   color: #b6b6b6;
